@@ -1,0 +1,6 @@
+---
+Name: htmleditoruploadfield
+---
+HtmlEditorField_Toolbar:
+  extensions:
+    - HtmlEditorField_LinkFormUploadField
