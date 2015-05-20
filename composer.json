@@ -15,6 +15,6 @@
 		"issues": "https://github.com/kinglozzer/htmleditoruploadfield/issues"
 	},
 	"require": {
-		"silverstripe/framework": "~3.1.0"
+		"silverstripe/framework": "^3.1.0"
 	}
 }
