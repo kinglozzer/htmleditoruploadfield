@@ -10,9 +10,15 @@ class HtmlEditorField_LinkFormUploadField extends Extension {
 
 		$form->Fields()->removeByName('file');
 
-		$fileField = UploadField::create('file', _t('HtmlEditorField.FILE', 'File'))
-			->setAllowedMaxFileNumber(1)
-			->setForm($form);
+		// Check for SelectUploadField
+		if (class_exists('SelectUploadField')) {
+  		$fileField = SelectUploadField::create('file', _t('HtmlEditorField.FILE', 'File'));
+		} else {
+  		$fileField = UploadField::create('file', _t('HtmlEditorField.FILE', 'File'));
+		}
+
+		$fileField->setAllowedMaxFileNumber(1);
+		$fileField->setForm($form);
 
 		$form->Fields()->insertAfter($fileField, 'email');
 
